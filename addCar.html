@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SemsaR</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <style>*{color: aliceblue;}
+        
+        .options label{margin: 5px;display: inline-block;border-radius: 15px;padding: 10px;background-color: rgba(0, 255, 255, 0.135);}
+        input{ 
+            background-color: rgba(240, 248, 255, 0);border: solid;border-color: aliceblue;border-radius: 20px;padding: 10px;margin: 10px;
+            color: aliceblue;
+        }
+
+        .caiin{
+            padding: 40px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container ooo ">
+      <header>
+        <div class="a">
+          <a href="index.html"><span>S</span><span style="font-size: 35px">emsa</span><span>R</span></a>
+        </div>
+        <div class="b ccc">
+          <div>about</div>
+          <div>search</div>
+          <div>contact</div>
+          <div>
+            <a href="login.html" target="_blank">Login</a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="container" data-aos-duration="500" data-aos="fade-up">
+        <div class="caiin">
+        <form action="" method="post">
+            
+            <h1>Add your car</h1>
+            <h3 data-aos-duration="500" data-aos="fade-up" ><i class="fa-solid fa-car"></i> About car</h3>
+            <input type="number" name="year" id="year" placeholder="year" max="2025" min="1999" required>
+            <input type="number" name="wilaya" id="wilaya" placeholder="wilaya" max="58" min="1" required>
+            <input list="brand-list" id="brand-input" name="brand" placeholder="Enter car brand" required>
+                <datalist id="brand-list" >
+                    <option value="mercedes">
+                    <option value="bmw">
+                    <option value="audi">
+                    <option value="astonmartin">
+                    <option value="peugeot">
+                    <option value="volkswagen">
+                    <option value="toyota">
+                    <option value="ford">
+                    <option value="honda">
+                    <option value="nissan">
+                    <option value="tesla">
+                </datalist>
+            <input type="text" id="model" name="model" placeholder="model" required>
+            <h3><i class="fa-solid fa-gear"></i> Motorisation</h3>
+            <input type="text" id="motor" name="motor" placeholder="motor">
+            
+            <input list="energie-list" id="energie-input" name="energie" placeholder="energie" required>
+                <datalist id="energie-list" >
+                    <option value="gasoline">
+                    <option value="diesel">
+                    <option value="electric">
+                </datalist>
+                
+                <input list="box-list" id="box-input" name="box" placeholder="box" required>
+                <datalist id="box-list" >
+                    <option value="automatic">
+                    <option value="manual">
+                </datalist>
+                
+            <h3><i class="fa-solid fa-thumbtack"></i> Specifiction</h3>
+            <input type="number" id="mileage" name="mileage" placeholder="mileage in 'KM'" required>
+            <input type="text" id="color" name="color" placeholder="color" required>
+            <input list="paper-list" id="paper-input" name="paper" placeholder="paper" required>
+                <datalist id="paper-list" >
+                    <option value="gray card">
+                    <option value="yellow card">
+                    <option value="licence">
+                </datalist>
+            
+            
+            
+            <input type="text" id="Cylinders" name="Cylinders" placeholder="Cylinders" required>
+            <input type="number" id="seats" name="seats" placeholder="seats" required>
+          
+
+            <h3><i class="fa-solid fa-filter"></i> Options</h3>
+            <!-- Essential Features -->
+                <div data-aos-duration="500" data-aos="fade-up" class="options">
+                    <label><input type="checkbox"> Air Conditioning</label>
+                    <label><input type="checkbox"> Power Windows</label>
+                    <label><input type="checkbox"> Power Door Locks</label>
+                    <label><input type="checkbox"> Keyless Entry</label>
+                    <label><input type="checkbox"> Bluetooth Connectivity</label>
+                    <label><input type="checkbox"> USB Ports</label>
+                    <label><input type="checkbox"> Rearview Camera</label>
+                    <label><input type="checkbox"> Tire Pressure Monitoring System (TPMS)</label>
+                    <label><input type="checkbox"> Anti-Lock Braking System (ABS)</label>
+                    <label><input type="checkbox"> Airbags (Front, Side, Curtain)</label>
+                    <label><input type="checkbox"> Electronic Stability Control (ESC)</label>
+                    <label><input type="checkbox"> Automatic Headlights</label>
+                    <label><input type="checkbox"> Cruise Control</label>
+                    <label><input type="checkbox"> Spare Tire or Tire Repair Kit</label>
+                </div>
+            <br><br>
+            <div data-aos-duration="500" data-aos="fade-up">
+            <h3 ><i class="fa-solid fa-pen"></i> Description </h3>
+            <textarea style="padding: 15px;resize: none;background-color: rgba(240, 248, 255, 0);border: solid 1px;border-radius: 4px;border-color: aliceblue;color: aliceblue;" name="description" id="description" cols="30" rows="10" placeholder="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit sed obcaecati autem praesentium earum. Est quae atque at eveniet voluptatibus accusantium nulla, repellendus quidem iusto aperiam dolore, placeat fuga laudantium!</textarea>
+          </div>
+          <div data-aos-duration="500" data-aos="fade-up">
+            <h3><i class="fa-solid fa-sack-dollar"></i> Price</h3>
+            <input type="number" name="price" id="price" placeholder="price in million"> </div>
+            <br><br>
+            <div data-aos-duration="500" data-aos="fade-up">
+            <h3><i class="fa-solid fa-image"></i> Photos</h3><br>
+            <input  type="file" name="photo" id="photo" accept="image/*" multiple>
+          </div>
+            <br><br>
+            <input style="padding: 15px;color: aliceblue;background-color: rgba(0, 0, 0, 0);border: solid;border-radius: 20px;border-color: aliceblue;" type="submit" value="confirm">
+        </form>
+    </div>
+    </div>
+    <main>
+      <div class="container">
+        
+      </div>
+       
+
+
+
+
+
+
+
+
+
+    </main>
+
+      <footer>
+        <div class="container">
+          <div data-aos-duration="500" data-aos="fade-up" class="fot">
+            <div class="Logo">
+              <h2>SemsaR</h2>
+              <h3>
+                SemsaR 2025<br />
+                All Rights Reserved ©
+              </h3>
+            </div>
+            <div class="about">
+              <h2>About</h2>
+              <p>who are we</p>
+              <p>how it work</p>
+              <p>privacy notice</p>
+              <p>Contact us</p>
+            </div>
+            <div class="links">
+              <h2>Links</h2>
+              <p>be bloger</p>
+              <p>News & Events</p>
+            </div>
+            <div class="social">
+              <h2>Socials</h2>
+              <p>facebook</p>
+              <p>Instagram</p>
+              <p>X</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+      <script src="js/index.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+/* Small */
+@media (max-width: 750px) {
+  body main {
+    margin: 20px;
+  }
+  .barss {
+    padding-left: 100px;
+  }
+
+  .ooo .a {
+    font-size: x-large;
+    padding: 0;
+  }
+
+  .cont .text .ffz {
+    font-size: 20px;
+  }
+  .cont .text .ddd {
+    font-size: 11px;
+  }
+  .icons .buy a {
+    font-size: 15px;
+  }
+  .icons .sell a {
+    font-size: 15px;
+  }
+
+  .icons div {
+    display: grid;
+    justify-content: flex-start;
+    margin-left: -10px;
+  }
+  .too .carcard {
+    display: inline-block;
+  }
+
+  .carcard .card-container {
+    width: fit-content;
+  }
+
+  .container .cont .img img {
+    display: none;
+  }
+  footer .container .fot {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    justify-items: center;
+  }
+  footer .container .fot div p {
+    font-size: 10px;
+  }
+  footer .container .fot div h3 {
+    font-size: 10px;
+  }
+  footer .container .fot div h2 {
+    font-size: 20px;
+  }
+
+  .ooo header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ooo header .b {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .ooo header .b div {
+    margin-bottom: 10px;
+  }
+
+  .ooo header:hover .b {
+    display: block;
+  }
+}
+
+@media (min-width: 751px) {
+  .too .carcard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .barss {
+    display: none;
+  }
+
+  .cont .text .ffz {
+    font-size: 40px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .cont .text .ffz {
+    font-size: 90px;
+  }
+
+  .too .carcard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
