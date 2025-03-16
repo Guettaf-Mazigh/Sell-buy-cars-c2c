@@ -6,21 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="css/admin.css" />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
     <!----===== Iconscout CSS ===== -->
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!----======== CSS ======== -->
     <title>Admin Dashboard Panel</title>
+    <link rel="stylesheet" href="css/admin.css" />
   </head>
   <body>
     <nav>
@@ -35,67 +29,63 @@
           <li>
             <a href="#">
               <i class="uil uil-estate"></i>
-              <span class="link-name">Dahsboard</span>
+              <span class="link-name"
+                ><button class="bsid" id="Dah">Dahsboard</button></span
+              >
             </a>
           </li>
           <li>
             <a href="#all">
               <i class="uil uil-files-landscapes"></i>
-              <span class="link-name">all users</span>
+              <span class="link-name"
+                ><button class="bsid" id="alluser">all users</button></span
+              >
             </a>
           </li>
           <li>
             <a href="#deleted">
               <i class="uil uil-chart"></i>
-              <span class="link-name">deleted posts</span>
+              <span class="link-name"
+                ><button class="bsid" id="deletedposts">
+                  deleted posts
+                </button></span
+              >
             </a>
           </li>
           <li>
             <a href="#aproved">
               <i class="uil uil-thumbs-up"></i>
-              <span class="link-name">aproved posts</span>
+              <span class="link-name"
+                ><button class="bsid" id="aprovedposts">
+                  aproved posts
+                </button></span
+              >
             </a>
           </li>
           <li>
             <a href="#article">
               <i class="uil uil-comments"></i>
-              <span class="link-name">article</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="uil uil-share"></i>
-              <span class="link-name">X</span>
+              <span class="link-name"
+                ><button class="bsid" id="articles">article</button></span
+              >
             </a>
           </li>
         </ul>
-
         <ul class="logout-mode">
           <li>
-            <a href="#">
+            <a>
               <i class="uil uil-signout"></i>
-              <span class="link-name">Logout</span>
+              <span class="link-name"
+                ><button class="bsid" id="logout">Logout</button></span
+              >
             </a>
-          </li>
-          <li class="mode">
-            <a href="#">
-              <i class="uil uil-moon"></i>
-              <span class="link-name">Dark Mode</span>
-            </a>
-            <div class="mode-toggle">
-              <span class="switch"></span>
-            </div>
           </li>
         </ul>
       </div>
     </nav>
-    <section class="dashboard">
+    <section id="dashboard" class="dashboard">
       <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
-        <div class="search-box">
-          <i class="uil uil-search"></i>
-          <input type="text" placeholder="Search here..." />
-        </div>
       </div>
       <div class="dash-content">
         <div class="overview">
@@ -105,17 +95,17 @@
           </div>
           <div class="boxes">
             <div class="box box1">
-              <i class="uil uil-thumbs-up"></i>
+              <i class="fa-solid fa-car"></i>
               <span class="text">Total Cars</span>
               <span class="number">50,120</span>
             </div>
             <div class="box box2">
-              <i class="uil uil-comments"></i>
-              <span class="text">Total Cars</span>
+              <i class="fa-solid fa-note-sticky"></i>
+              <span class="text">Total article</span>
               <span class="number">20,120</span>
             </div>
             <div class="box box3">
-              <i class="uil uil-share"></i>
+              <i class="fa-solid fa-user"></i>
               <span class="text">Total semsars</span>
               <span class="number">10,120</span>
             </div>
@@ -142,65 +132,121 @@
                 <td>222</td>
                 <td>Prem Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>acsept</button> <button>refuse</button></td>
-                <td><button>s</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td>
+                  <button class="acs">✔️</button>
+                  <button class="reff">❌</button>
+                </td>
+                <td><button class="sign">s</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Deepa Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>acsept</button> <button>refuse</button></td>
-                <td><button>s</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td>
+                  <button class="acs">✔️</button>
+                  <button class="reff">❌</button>
+                </td>
+                <td><button class="sign">s</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Manisha Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>acsept</button> <button>refuse</button></td>
-                <td><button>s</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td>
+                  <button class="acs">✔️</button>
+                  <button class="reff">❌</button>
+                </td>
+                <td><button class="sign">s</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Pratima Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>acsept</button> <button>refuse</button></td>
-                <td><button>s</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td>
+                  <button class="acs">✔️</button>
+                  <button class="reff">❌</button>
+                </td>
+                <td><button class="sign">s</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Man Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>acsept</button> <button>refuse</button></td>
-                <td><button>s</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td>
+                  <button class="acs">✔️</button>
+                  <button class="reff">❌</button>
+                </td>
+                <td><button class="sign">s</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Ganesh Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>acsept</button> <button>refuse</button></td>
-                <td><button>s</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td>
+                  <button class="acs">✔️</button>
+                  <button class="reff">❌</button>
+                </td>
+                <td><button class="sign">s</button></td>
               </tr>
               <tr>
                 <td>44</td>
                 <td>Bikash Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>acsept</button> <button>refuse</button></td>
-                <td><button>s</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td>
+                  <button class="acs">✔️</button>
+                  <button class="reff">❌</button>
+                </td>
+                <td><button class="sign">s</button></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
-    <hr />
-    <section class="dashboard">
+
+    <section id="all-dashboard" class="dashboard">
       <div id="all" class="dash-content">
         <div class="activity">
           <div class="title">
@@ -213,44 +259,44 @@
                 <th>ID</th>
                 <th>Name</th>
 
-                <th>X</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>222</td>
                 <td>Prem Shahi</td>
-                <td><button>acsept</button> <button>refuse</button></td>
+                <td><button class="reff">delete account</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Deepa Chand</td>
-                <td><button>acsept</button> <button>refuse</button></td>
+                <td><button class="reff">delete account</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Manisha Chand</td>
-                <td><button>acsept</button> <button>refuse</button></td>
+                <td><button class="reff">delete account</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Pratima Shahi</td>
-                <td><button>acsept</button> <button>refuse</button></td>
+                <td><button class="reff">delete account</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Man Shahi</td>
-                <td><button>acsept</button> <button>refuse</button></td>
+                <td><button class="reff">delete account</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Ganesh Chand</td>
-                <td><button>acsept</button> <button>refuse</button></td>
+                <td><button class="reff">delete account</button></td>
               </tr>
               <tr>
                 <td>44</td>
                 <td>Bikash Chand</td>
-                <td><button>acsept</button> <button>refuse</button></td>
+                <td><button class="reff">delete account</button></td>
               </tr>
             </tbody>
           </table>
@@ -258,7 +304,7 @@
       </div>
     </section>
 
-    <section class="dashboard">
+    <section id="deleted-dashboard" class="dashboard">
       <div id="deleted" class="dash-content">
         <div class="activity">
           <div class="title">
@@ -280,57 +326,92 @@
                 <td>222</td>
                 <td>Prem Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>back</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="acs">back</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Deepa Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>back</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="acs">back</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Manisha Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>back</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="acs">back</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Pratima Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>back</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="acs">back</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Man Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>back</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="acs">back</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Ganesh Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>back</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="acs">back</button></td>
               </tr>
               <tr>
                 <td>44</td>
                 <td>Bikash Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>back</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="acs">back</button></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
-    <section class="dashboard">
+    <section id="aproved-dashboard" class="dashboard">
       <div id="aproved" class="dash-content">
         <div class="activity">
           <div class="title">
@@ -352,95 +433,146 @@
                 <td>222</td>
                 <td>Prem Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>delete</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="reff">delete</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Deepa Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>delete</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="reff">delete</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Manisha Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>delete</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="reff">delete</button></td>
               </tr>
               <tr>
                 <td>22</td>
                 <td>Pratima Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>delete</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="reff">delete</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Man Shahi</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>delete</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="reff">delete</button></td>
               </tr>
               <tr>
                 <td>33</td>
                 <td>Ganesh Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>delete</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="reff">delete</button></td>
               </tr>
               <tr>
                 <td>44</td>
                 <td>Bikash Chand</td>
 
-                <td><a href="carinfo.html">fff</a></td>
-                <td><button>delete</button></td>
+                <td>
+                  <a href="carinfo.html"
+                    >check it
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </td>
+                <td><button class="reff">delete</button></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
     </section>
-    <section class="dashboard">
+
+    <section id="article-dashboard" class="dashboard">
       <div id="article" class="dash-content">
-        <div class="activity">
+        <div style="overflow: scroll" class="activity">
           <div class="title">
             <i class="uil uil-clock-three"></i>
             <span class="text">article</span>
           </div>
-          <div class="articles" >
-            <div class="card" style="width: 18rem">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+
+          <div class="card">
+            <div class="card-img-holder">
+              <img
+                src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
+                alt="Blog image"
+              />
             </div>
-            <div class="card" style="width: 18rem">
-              <img src="..." class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+            <h3 class="blog-title">Learn Microinteraction</h3>
+            <span class="blog-time">Monday Jan 20, 2020</span>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              sagittis viverra turpis, non cursus ex accumsan at.
+            </p>
+            <div class="options">
+              <span>
+                <a href="articleviewuser.html">Read Blog</a>
+              </span>
+              <button class="btn"><a href="createarticle.html">edit</a></button>
+              <button class="btn reff">delete</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-holder">
+              <img
+                src="https://images.unsplash.com/photo-1640102953836-5651f5d6b240?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80"
+                alt="Blog image"
+              />
+            </div>
+            <h3 class="blog-title">Learn Microinteraction</h3>
+            <span class="blog-time">Monday Jan 20, 2020</span>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              sagittis viverra turpis, non cursus ex accumsan at.
+            </p>
+            <div class="options">
+              <span>
+                <a href="articleviewuser.html">Read Blog</a>
+              </span>
+              <button class="btn"><a href="createarticle.html">edit</a></button>
+              <button class="btn reff">delete</button>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
     <script src="js/admin.js"></script>
   </body>
 </html>

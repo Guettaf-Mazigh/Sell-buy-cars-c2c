@@ -11,4 +11,3 @@ showmore.onclick = () => {
     showmore.style.display = "none";
   }
 };
-
