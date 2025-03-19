@@ -1,4 +1,4 @@
-let filter = document.querySelector(".filter1");
+let filter = document.querySelector(".filter1 ");
 let side = document.querySelector(".sidebar");
 
 filter.onclick = () => {
