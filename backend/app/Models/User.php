@@ -19,6 +19,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'gender',
+        'wilaya',
+        'phone',
         'email',
         'password',
     ];
@@ -44,5 +47,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function carModel(){
+        return $this->hasMany(CarModel::class,'user_id');
     }
 }
