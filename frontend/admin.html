@@ -15,6 +15,14 @@
     <!----======== CSS ======== -->
     <title>Admin Dashboard Panel</title>
     <link rel="stylesheet" href="css/admin.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav>
@@ -36,7 +44,7 @@
           </li>
           <li>
             <a href="#all">
-              <i class="uil uil-files-landscapes"></i>
+              <i class="uil uil-user-circle"></i>
               <span class="link-name"
                 ><button class="bsid" id="alluser">all users</button></span
               >
@@ -44,7 +52,7 @@
           </li>
           <li>
             <a href="#deleted">
-              <i class="uil uil-chart"></i>
+              <i class="uil uil-multiply"></i>
               <span class="link-name"
                 ><button class="bsid" id="deletedposts">
                   deleted posts
@@ -53,20 +61,29 @@
             </a>
           </li>
           <li>
-            <a href="#aproved">
-              <i class="uil uil-thumbs-up"></i>
+            <a href="#approved">
+              <i class="uil uil-check"></i>
               <span class="link-name"
-                ><button class="bsid" id="aprovedposts">
-                  aproved posts
+                ><button class="bsid" id="approvedposts">
+                  approved posts
                 </button></span
               >
             </a>
           </li>
           <li>
             <a href="#article">
-              <i class="uil uil-comments"></i>
+              <i class="uil uil-clipboard-notes"></i>
               <span class="link-name"
-                ><button class="bsid" id="articles">article</button></span
+                ><button class="bsid" id="articles">articles</button></span
+              >
+            </a>
+          </li>
+
+          <li>
+            <a href="#addingcar">
+              <i class="uil uil-car"></i>
+              <span class="link-name"
+                ><button class="bsid" id="addcar">Add band</button></span
               >
             </a>
           </li>
@@ -101,7 +118,7 @@
             </div>
             <div class="box box2">
               <i class="fa-solid fa-note-sticky"></i>
-              <span class="text">Total article</span>
+              <span class="text">Total articles</span>
               <span class="number">20,120</span>
             </div>
             <div class="box box3">
@@ -114,7 +131,7 @@
         <div class="activity">
           <div class="title">
             <i class="uil uil-clock-three"></i>
-            <span class="text">Recent Activity</span>
+            <span class="text">Recent posts</span>
           </div>
           <table class="activity-data">
             <thead>
@@ -250,7 +267,7 @@
       <div id="all" class="dash-content">
         <div class="activity">
           <div class="title">
-            <i class="uil uil-clock-three"></i>
+            <i class="uil uil-user-circle"></i>
             <span class="text">All users</span>
           </div>
           <table class="activity-data">
@@ -308,7 +325,7 @@
       <div id="deleted" class="dash-content">
         <div class="activity">
           <div class="title">
-            <i class="uil uil-clock-three"></i>
+            <i class="uil uil-multiply"></i>
             <span class="text">deleted postes</span>
           </div>
           <table class="activity-data">
@@ -411,11 +428,11 @@
         </div>
       </div>
     </section>
-    <section id="aproved-dashboard" class="dashboard">
-      <div id="aproved" class="dash-content">
+    <section id="approved-dashboard" class="dashboard">
+      <div id="approved" class="dash-content">
         <div class="activity">
           <div class="title">
-            <i class="uil uil-clock-three"></i>
+            <i class="uil uil-check"></i>
             <span class="text">approved postes</span>
           </div>
           <table class="activity-data">
@@ -522,9 +539,23 @@
     <section id="article-dashboard" class="dashboard">
       <div id="article" class="dash-content">
         <div style="overflow: scroll" class="activity">
-          <div class="title">
-            <i class="uil uil-clock-three"></i>
-            <span class="text">article</span>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-right: 200px;
+            "
+          >
+            <div style="font-size: 30px" class="title">
+              <i class="uil uil-clipboard-notes"></i>
+              <span class="text">articles</span>
+            </div>
+            <div style="font-size: 30px" class="title">
+              <i class="uil uil-pen"></i>
+              <a href="createarticle.html"
+                ><span class="text">creat new article</span></a
+              >
+            </div>
           </div>
 
           <div class="card">
@@ -573,6 +604,49 @@
         </div>
       </div>
     </section>
+
+    <!-- admin adding cars -->
+
+    <section id="article-dashboard" class="dashboard">
+      <div id="addingcar" class="dash-content">
+        <div style="overflow: scroll" class="activity">
+          <div class="title">
+            <i class="uil uil-car"></i>
+            <span class="text">Add Brand</span>
+          </div>
+          <form action="" method="post">
+            <style>
+              #brand,
+              #model {
+                border: solid;
+                border-color: black;
+                border-radius: 10px;
+                border-width: 2px;
+
+                padding: 10px;
+                margin-bottom: 10px;
+              }
+            </style>
+            <input type="text" id="brand" name="" placeholder="brand Name" />
+            <br />
+            <input type="text" id="model" placeholder="model Name" />
+            <br />
+            <input
+              style="
+                border: solid;
+                padding: 5px;
+                border-radius: 5px;
+                background-color: #0e4bf1;
+                color: aliceblue;
+              "
+              type="submit"
+              value="submit"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+
     <script src="js/admin.js"></script>
   </body>
 </html>
