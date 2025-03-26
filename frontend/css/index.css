@@ -112,15 +112,28 @@
   .abcc .ffz {
     font-size: 50px;
   }
+
+  .jjjjjjj {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
 }
 /* Large */
 @media (min-width: 1200px) {
   .cont .text .ffz {
-    font-size: 90px;
+    font-size: 85px;
   }
 
   .too .carcard {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ooo .content .title {
+    font-size: 50px;
+  }
+  .jjjjjjj {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
   }
 }

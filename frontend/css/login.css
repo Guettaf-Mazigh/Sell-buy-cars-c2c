@@ -5,27 +5,14 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-html,
+
 body {
   display: grid;
   height: 100%;
   width: 100%;
   place-items: center;
-
   font-family: "Outfit", sans-serif;
   background-color: #010922;
-}
-
-body::before {
-  content: "";
-
-  box-shadow: 50px 50px 900px 150px rgb(74, 161, 132);
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-
-  position: absolute;
-  right: 0;
-  bottom: 180px;
 }
 
 ::selection {
@@ -195,17 +182,4 @@ form .btn input[type="submit"] {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
-}
-
-.hh::before {
-  content: "";
-
-  box-shadow: 10px 10px 900px 100px rgb(161 74 74);
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-
-  position: absolute;
-  left: 300px;
-  top: 00px;
-  z-index: 1;
 }
