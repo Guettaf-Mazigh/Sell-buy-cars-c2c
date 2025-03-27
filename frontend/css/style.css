@@ -345,8 +345,8 @@ a {
 input[type="file"] {
   margin: auto;
   padding: 1em;
-  border: 2px dashed #bbb;
-  background-color: #ffffff35;
+  border: 2px dashed #bbbbbb00;
+  background-color: #ffffff00;
   transition: border-color 0.25s ease-in-out;
   width: 185px;
   &::file-selector-button {
