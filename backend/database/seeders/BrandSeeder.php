@@ -14,12 +14,12 @@ class BrandSeeder extends Seeder
     public function run(): void
     {
         $brands = [
-            ['brandName' => 'Toyota'],
-            ['brandName' => 'Ford'],
-            ['brandName' => 'Audi'],
-            ['brandName' => 'Mercedes Benz'],
-            ['brandName' => 'BMW'],
-            ['brandName' => 'Honda'],
+            ['brandName' => 'Toyota','logo' => 'brands/toyota.png'],
+            ['brandName' => 'Ford','logo' => 'brands/ford.png'],
+            ['brandName' => 'Audi','logo' => 'brands/audi.png'],
+            ['brandName' => 'Mercedes Benz','logo' => 'brands/mercedes.png'],
+            ['brandName' => 'BMW','logo' => 'brands/bmw.png'],
+            ['brandName' => 'Honda','logo' => 'brands/honda.png'],
             ['brandName' => 'Volkswagen'],
             ['brandName' => 'Chevrolet'],
             ['brandName' => 'Nissan'],

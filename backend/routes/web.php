@@ -8,4 +8,6 @@ Route::controller(CarController::class)->group(function(){
     Route::get('/searchcar','searchcar')->name('search.car');
     Route::get('/about','about')->name('about.semsar');
     Route::get('/login','login')->name('login');
+    Route::get('/carinfo/{carId}','carInfo')->name('car.info');
+    Route::get('/semsarpage/{userId}','semsarPage')->name('semsar.page');
 });

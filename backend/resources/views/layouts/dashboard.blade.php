@@ -23,7 +23,6 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}" />
-    @if (request()->routeIs('search.car'))
     <style>
       input {
         background-color: rgba(240, 248, 255, 0);
@@ -34,8 +33,12 @@
         margin: 10px;
         color: aliceblue;
       }
+      <style>
+      * {
+        color: aliceblue;
+      }
+      </style>
     </style>
-    @endif
   </head>
 
   <body>
@@ -66,5 +69,6 @@
     <script src="{{asset('js/filtre.js')}}"></script>
     <script src="{{asset('js/search.js')}}"></script>
     <script src="{{asset('js/login.js')}}"></script>
+    <script src="{{asset('js/sellerpage.js')}}"></script>
   </body>
 </html>

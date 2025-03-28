@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('model_id')->constrained('car_models')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->double('price',10,2);
+            $table->integer('price');//milions centime
             $table->integer('year');
             $table->String('motor');
             $table->enum('energy',['gasoline','diesel','GPL','electricity','hybrid']);
             $table->enum('box',['automatic','manual','semi_automatic']);
             $table->bigInteger('kilometrage');
             $table->string('Color');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

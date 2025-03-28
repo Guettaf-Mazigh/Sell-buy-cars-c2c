@@ -41,12 +41,20 @@
     </h2>
     <div class="carousel basic">
       <div class="group">
-        <div class="card">A</div>
-        <div class="card">B</div>
-        <div class="card">C</div>
-        <div class="card">A</div>
-        <div class="card">B</div>
-        <div class="card">C</div>
+        @foreach ($brands as $brand)
+          <div class="card" style="
+          width: 25px; 
+          height: 25px; 
+          display: flex; 
+          justify-content: center; 
+          align-items: center; 
+          
+      "><img src="{{asset($brand->logo)}}" alt="{{$brand->brandName}}" style="
+        width: 100%; 
+        height: 100%; 
+        object-fit: contain;
+    "></div>
+        @endforeach
       </div>
     </div>
   </div>
@@ -64,215 +72,32 @@
 
   <div data-aos-duration="500" data-aos="fade-up" class="too">
     <div data-aos-duration="500" data-aos="fade-up" class="carcard">
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i>kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
-      <div class="card-container">
-        <img
-          src="{{asset('img/main-car.webp')}}"
-          alt="Car Image"
-          style="width: 100%; border-radius: 0 0 5px 5px"
-        />
-        <h3>NameOfcar</h3>
-        <p><i class="fa-solid fa-location-dot"></i> wilaya</p>
-        <div class="khnatech">
-          <span> <i class="fa-solid fa-road"></i> kilometrage</span>
-          <span><i class="fa-solid fa-gauge-high"></i> Boite</span>
-          <span><i class="fa-solid fa-gas-pump"></i> Energie</span>
-          <span><i class="fa-solid fa-chair"></i> seats</span>
-        </div>
-        <div style="display: flex; justify-content: space-between">
-          <p><i class="fa-solid fa-sack-dollar"></i> price</p>
-          <button class="info-button">
-            <a href="carinfo.html" target="_blank"
-              ><i class="fa-solid fa-circle-info"></i> more info</a
-            >
-          </button>
-        </div>
-      </div>
+      @foreach ($cars as $car)
+        <div class="card-container">
+          <img
+            src="{{asset('img/main-car.webp')}}"
+            alt="Car Image"
+            style="width: 100%; border-radius: 0 0 5px 5px"
+          />
+          <h3>{{$car->model->modelName}}</h3>
+          <p><i class="fa-solid fa-location-dot"></i> {{$car->user->wilaya}}</p>
+          <div class="khnatech">
+            <span> <i class="fa-solid fa-road"></i> {{$car->kilometrage}} Km</span>
+            <span><i class="fa-solid fa-gauge-high"></i> {{$car->box}}</span>
+            <span><i class="fa-solid fa-gas-pump"></i> {{$car->energy}}</span>
+            <span><i class="fa-solid fa-chair"></i> {{$car->year}}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <p><i class="fa-solid fa-sack-dollar"></i> {{$car->price}} millions</p>
+            <button class="info-button">
+              <a href="{{route('car.info',$car->id)}}" target="_blank"
+                ><i class="fa-solid fa-circle-info"></i> more info</a
+              >
+            </button>
+          </div>
+        </div>      
+      @endforeach
     </div>
-
     <button class="shown" style="width: min-content">showmore</button>
   </div>
 </div>
