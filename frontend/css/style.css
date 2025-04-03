@@ -23,17 +23,34 @@ a {
   padding-right: 25px;
   margin-left: auto;
   margin-right: auto;
+
 }
+
+.ooo + * {
+  margin-top: 200px;
+}
+
+
+
 
 header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   color: aliceblue;
-
+  padding: 0px 20px 0px 20px;
   justify-content: space-between;
   margin-top: 20px;
   align-items: center;
+  right: 100px;
+  left: 100px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  background-color: #34128b;
+  border-radius: 10px;
 }
+
+
 header .a {
   width: min-content;
   font-size: 40px;
@@ -117,20 +134,7 @@ main {
   color: aliceblue;
 }
 
-header::before {
-  content: "";
 
-  box-shadow: 50px 40px 900px 150px rgba(77, 68, 208, 0.511);
-  border-top-left-radius: 3%;
-  border-bottom-left-radius: 3%;
-
-  position: absolute;
-  left: 100px;
-
-  bottom: 1px;
-  right: 0px;
-  z-index: -999;
-}
 
 .buy::after {
   content: "";
@@ -205,14 +209,14 @@ a {
   width: 100%;
   color: white;
   border-radius: 24px;
-  box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
+  box-shadow: rgba(0, 0, 0, 30%) 5px 5px 20px 0;
   padding: 20px;
   font-size: xx-large;
   justify-content: center;
   align-items: center;
   min-height: 200px;
   flex: 0 0 calc(33.333% - 20px); /* Adjust based on the number of cards */
-  background: #4300da;
+  background: #4100da00;
   cursor: pointer;
 }
 

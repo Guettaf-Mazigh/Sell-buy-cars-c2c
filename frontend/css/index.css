@@ -34,6 +34,10 @@
     display: inline-block;
   }
 
+
+  body .ooo + main {
+    margin-top: 160px;
+  }
   .carcard .card-container {
     width: fit-content;
   }
@@ -60,6 +64,8 @@
   .ooo header {
     display: flex;
     justify-content: space-between;
+    right: 30px;
+    left: 30px;
   }
 
   .ooo header .b {
