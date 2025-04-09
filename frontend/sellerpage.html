@@ -175,8 +175,8 @@
           Publiched Cars
         </h2>
 
-        <div data-aos-duration="1500" data-aos="fade-up" class="too">
-          <div data-aos-duration="1500" data-aos="fade-up" class="carcard">
+        <div  class="too">
+          <div class="carcard">
             <div class="card-container">
               <img
                 src="img/main-car.webp"
@@ -383,5 +383,32 @@
     ></script>
     <script src="js/sellerpage.js"></script>
     <script src="js/showmore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+window.addEventListener("DOMContentLoaded", () => {
+  const message = localStorage.getItem("sellerMessage");
+
+  if (message) {
+    // Show the message as a toast
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      icon: 'info',
+      title: 'You have a new message!',
+      text: message,
+      
+      showConfirmButton: false
+    });
+
+    // Optional: Clear the message after showing it once
+    localStorage.removeItem("sellerMessage");
+  }
+});
+
+
+
+</script>
   </body>
 </html>
