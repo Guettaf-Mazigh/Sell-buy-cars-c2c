@@ -89,6 +89,7 @@ nav .menu-items {
   text-decoration: none;
   position: relative;
 }
+.logout-mode li a:hover::before,
 .nav-links li a:hover:before {
   content: "";
   position: absolute;
@@ -118,6 +119,7 @@ nav.close li a .link-name {
   opacity: 0;
   pointer-events: none;
 }
+.logout-mode li a:hover i,
 .nav-links li a:hover i,
 .nav-links li a:hover .link-name {
   color: var(--primary-color);
@@ -331,6 +333,12 @@ nav.close ~ .dashboard .top {
   }
   .activity .activity-data {
     overflow-x: scroll;
+  }
+
+  #modal3 .modal-content,
+  #modal2 .modal-content {
+    flex-wrap: wrap;
+    overflow: scroll;
   }
 }
 @media (max-width: 780px) {
