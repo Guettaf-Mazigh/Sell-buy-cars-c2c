@@ -48,7 +48,6 @@
           display: flex; 
           justify-content: center; 
           align-items: center; 
-          
       "><img src="{{asset($brand->logo)}}" alt="{{$brand->brandName}}" style="
         width: 100%; 
         height: 100%; 

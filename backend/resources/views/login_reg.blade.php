@@ -46,15 +46,16 @@
               Not a member? <a href="">Signup now</a>
             </div>
           </form>
-          <form action="#" class="signup">
+          <form action="{{route('register')}}" method="POST" class="signup">
+            @csrf
             <div class="field">
-              <input type="text" placeholder="Email Address" required />
+              <input type="email" name="email" placeholder="Email Address" required />
             </div>
             <div class="field">
-              <input type="password" placeholder="Password" required />
+              <input type="password" name="password" placeholder="Password" required />
             </div>
             <div class="field">
-              <input type="password" placeholder="Confirm password" required />
+              <input type="password" name="password_confirmation" placeholder="Confirm password" required />
             </div>
             <div class="field btn">
               <div class="btn-layer"></div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -50,7 +51,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function carModel(){
-        return $this->hasMany(CarModel::class,'user_id');
+    public function cars():HasMany{
+        return $this->hasMany(Car::class);
     }
 }
