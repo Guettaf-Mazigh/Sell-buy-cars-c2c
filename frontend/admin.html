@@ -83,7 +83,7 @@
             <a href="#addingcar">
               <i class="uil uil-car"></i>
               <span class="link-name"
-                ><button class="bsid" id="addcar">Add band</button></span
+                ><button class="bsid" id="addcar">Add brand/Modal</button></span
               >
             </a>
           </li>
@@ -141,7 +141,6 @@
 
                 <th>vhicule</th>
                 <th>Action</th>
-                <th>notify the user</th>
               </tr>
             </thead>
             <tbody>
@@ -162,11 +161,7 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                <td>
-                  <button class="sign sign2">
-                    <i class="fa-solid fa-hand-point-right"></i>
-                  </button>
-                </td>
+                
               </tr>
               <tr>
                 <td>22</td>
@@ -185,11 +180,7 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                <td>
-                  <button class="sign sign2">
-                    <i class="fa-solid fa-hand-point-right"></i>
-                  </button>
-                </td>
+                
               </tr>
               <tr>
                 <td>33</td>
@@ -208,11 +199,7 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                <td>
-                  <button class="sign sign2">
-                    <i class="fa-solid fa-hand-point-right"></i>
-                  </button>
-                </td>
+                
               </tr>
               <tr>
                 <td>22</td>
@@ -231,11 +218,7 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                <td>
-                  <button class="sign sign2">
-                    <i class="fa-solid fa-hand-point-right"></i>
-                  </button>
-                </td>
+                
               </tr>
               <tr>
                 <td>33</td>
@@ -254,11 +237,7 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                <td>
-                  <button class="sign sign2">
-                    <i class="fa-solid fa-hand-point-right"></i>
-                  </button>
-                </td>
+                
               </tr>
               <tr>
                 <td>33</td>
@@ -277,11 +256,7 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                <td>
-                  <button class="sign sign2">
-                    <i class="fa-solid fa-hand-point-right"></i>
-                  </button>
-                </td>
+                
               </tr>
               <tr>
                 <td>44</td>
@@ -300,11 +275,7 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                <td>
-                  <button class="sign sign2">
-                    <i class="fa-solid fa-hand-point-right"></i>
-                  </button>
-                </td>
+                
               </tr>
             </tbody>
 
@@ -790,7 +761,69 @@
         <div style="overflow: scroll" class="activity">
           <div class="title">
             <i class="uil uil-car"></i>
-            <span class="text">Add Brand</span>
+            <span class="text">Add New Modal</span>
+          </div>
+          <form id="myForm" action="" method="post">
+            <style>
+              #brand,
+              #model,select {
+                border: solid;
+                border-color: black;
+                border-radius: 10px;
+                border-width: 2px;
+
+                padding: 10px;
+                margin-bottom: 10px;
+              }
+            </style>
+            <select
+            style="width: 199.2px;"
+              id="brand-input"
+              name="brand"
+            >
+              <option value="" disabled selected>Select a car brand</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="bmw">BMW</option>
+              <option value="audi">Audi</option>
+              <option value="astonmartin">Aston Martin</option>
+              <option value="peugeot">Peugeot</option>
+              <option value="volkswagen">Volkswagen</option>
+              <option value="toyota">Toyota</option>
+              <option value="ford">Ford</option>
+              <option value="honda">Honda</option>
+              <option value="nissan">Nissan</option>
+              <option value="tesla">Tesla</option>
+              <option value="chevrolet">Chevrolet</option>
+              <option value="hyundai">Hyundai</option>
+              <option value="kia">Kia</option>
+              <option value="porsche">Porsche</option>
+              <option value="ferrari">Ferrari</option>
+              <option value="lamborghini">Lamborghini</option>
+              <option value="jaguar">Jaguar</option>
+              <option value="landrover">Land Rover</option>
+              <option value="mazda">Mazda</option>
+              <option value="subaru">Subaru</option>
+            </select>
+            <br />
+            <input type="text" id="model" placeholder="model Name" />
+            <br />
+            <input
+              style="
+                border: solid;
+                padding: 5px;
+                border-radius: 5px;
+                background-color: #0e4bf1;
+                color: aliceblue;
+              "
+              type="submit"
+              value="submit"
+              class="submit"
+              id="submitButton"
+            />
+          </form>
+          <div class="title">
+            <i class="uil uil-car"></i>
+            <span class="text">Add New Brand</span>
           </div>
           <form id="myForm" action="" method="post">
             <style>
