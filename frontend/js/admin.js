@@ -50,29 +50,7 @@ document.querySelectorAll(".not").forEach((button) => {
   });
 });
 
-document.querySelectorAll(".sign2").forEach((button) => {
-  button.addEventListener("click", async () => {
-    const { value: text } = await Swal.fire({
-      toast: true,
-      title: "Send a message to seller",
-      input: "textarea",
-      inputLabel: "Message",
-      inputPlaceholder: "Type your message...",
-      showCancelButton: true,
-    });
 
-    if (text) {
-      // Save the message to localStorage
-      localStorage.setItem("sellerMessage", text);
-
-      Swal.fire({
-        toast: true,
-        icon: "success",
-        title: "Message sended",
-      });
-    }
-  });
-});
 
 document.getElementById("logout").addEventListener("click", () => {
   Swal.fire({

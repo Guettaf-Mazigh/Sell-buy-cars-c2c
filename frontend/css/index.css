@@ -96,10 +96,11 @@
     width: 90px;
   }
 
-  .conti img {
-    max-width: 300px;
-    max-height: 300px;
-  }
+    .conti img {
+        max-width: 230px;
+        max-height: 230px;
+    }
+
 }
 
 @media (min-width: 751px) {
