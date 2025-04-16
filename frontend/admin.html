@@ -161,7 +161,6 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                
               </tr>
               <tr>
                 <td>22</td>
@@ -180,7 +179,6 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                
               </tr>
               <tr>
                 <td>33</td>
@@ -199,7 +197,6 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                
               </tr>
               <tr>
                 <td>22</td>
@@ -218,7 +215,6 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                
               </tr>
               <tr>
                 <td>33</td>
@@ -237,7 +233,6 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                
               </tr>
               <tr>
                 <td>33</td>
@@ -256,7 +251,6 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                
               </tr>
               <tr>
                 <td>44</td>
@@ -275,7 +269,6 @@
                   <button class="acs done">✔️</button>
                   <button class="reff not not">❌</button>
                 </td>
-                
               </tr>
             </tbody>
 
@@ -422,9 +415,6 @@
                 <td><button class="reff not">delete account</button></td>
               </tr>
             </tbody>
-
-
-
 
             <div class="modal-overlay" id="modal3-overlay">
               <div
@@ -721,7 +711,7 @@
             <div style="font-size: 30px" class="title">
               <button
                 class="modal-open button"
-                data-modal="modal3"
+                data-modal="modal4"
                 aria-haspopup="true"
                 style="background-color: #0e4bf100; display: flex"
               >
@@ -841,6 +831,33 @@
           </div>
         </div>
       </div>
+
+      <div class="modal-overlay" id="modal4-overlay">
+        <div
+          class="modal"
+          id="modal4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal4-title"
+        >
+          <div class="modal-header">
+            <h2 id="modal4-title">Create Article / User View</h2>
+            <button class="modal-close" aria-label="Close modal">
+              &times;
+            </button>
+          </div>
+          <div style="display: flex" class="modal-content">
+            <iframe
+              src="createarticle.html"
+              style="display: inline-block; height: 100%; width: 100%"
+            ></iframe>
+            <iframe
+              src="articleviewuser.html"
+              style="display: inline-block; height: 100%; width: 100%"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- admin adding cars -->
@@ -855,7 +872,8 @@
           <form id="myForm" action="" method="post">
             <style>
               #brand,
-              #model,select {
+              #model,
+              select {
                 border: solid;
                 border-color: black;
                 border-radius: 10px;
@@ -865,11 +883,7 @@
                 margin-bottom: 10px;
               }
             </style>
-            <select
-            style="width: 199.2px;"
-              id="brand-input"
-              name="brand"
-            >
+            <select style="width: 199.2px" id="brand-input" name="brand">
               <option value="" disabled selected>Select a car brand</option>
               <option value="mercedes">Mercedes</option>
               <option value="bmw">BMW</option>
