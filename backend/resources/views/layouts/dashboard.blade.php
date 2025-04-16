@@ -23,6 +23,7 @@
 />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('css/all.min.css')}}" />
+@if (!request()->routeIs('add.car'))
 <style>
   input {
     background-color: rgba(240, 248, 255, 0);
@@ -33,8 +34,13 @@
     margin: 10px;
     color: aliceblue;
   }
-  </style>
+  *{
+    color: aliceblue;
+  }
 </style>
+@else
+  <link rel="stylesheet" href="{{asset('css/addcar.css')}}">
+@endif
 </head>
 
 <body>

@@ -82,7 +82,7 @@
       @foreach ($semsarCars as $semsarCar)
         <div class="card-container">
           <img
-            src="img/main-car.webp"
+            src="{{asset('img/main-car.webp')}}"
             alt="Car Image"
             style="width: 100%; border-radius: 0 0 5px 5px"
           />

@@ -4,15 +4,17 @@
 <div class="b">
     <div><a href="{{route('about.semsar')}}" target="_blank">about</a></div>
     @if (request()->routeIs('edit.profile'))
-      <div><a href="#" target="_blank">addCar</a></div>
-    @endif
-    @if (request()->routeIs('index'))
+      <div><a href="{{route('add.car')}}" target="_blank">addCar</a></div>
+    @else
       <div><a href="{{route('search.car')}}" target="_blank">search</a></div>
     @endif
     <div><a href="{{route('about.semsar')}}" target="_blank">contact</a></div>
-  <div>
-    <a href="{{route('login')}}" target="_blank">login</a>
-  </div>
+    @auth  
+      <div><a href="{{route('logout')}}" target="_blank">Log Out</a></div>
+    @endauth  
+    @guest
+      <div><a href="{{route('login')}}" target="_blank">login</a></div>
+    @endguest
 </div>
 <div class="barss">
   <i style="font-size: 25px" class="fa-solid fa-bars"></i>

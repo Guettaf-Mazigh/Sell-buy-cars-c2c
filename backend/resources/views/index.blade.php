@@ -21,7 +21,16 @@
           >
         </div>
         <div data-aos-duration="500" data-aos="fade-up" class="sell">
-          <a href="login.html" target="_blank">sell Cars</a>
+          @auth 
+            @if (Auth::user()->name)
+              <a href="{{route('add.car')}}" target="_blank">sell Cars</a>
+            @else
+              <a href="{{route('edit.profile')}}" target="_blank">sell Cars</a>
+            @endif 
+          @endauth
+          @guest
+            <a href="{{route('login')}}" target="_blank">sell Cars</a>
+          @endguest
         </div>
       </div>
     </div>

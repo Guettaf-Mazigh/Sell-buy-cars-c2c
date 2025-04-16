@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Car;
+use App\Models\CarModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,35 @@ class CarController extends Controller
         return view('index',compact('cars','brands'));
     }
 
-    public function searchcar(){
-        return view('searchcar');
+    public function searchcar(Request $request){
+        $cars = Car::query();
+        if($request->filled('brand')){
+            $cars->whereHas('model.brand',function ($q) use ($request){
+                $q->where('id', $request->brand);
+            });
+        }
+    
+        if($request->filled('model')){
+            $model = CarModel::where('modelName',$request->model)->first();
+            if($model){
+                $cars->where('model_id',$model->id);
+            }
+        }
+
+        if($request->filled('year')){
+            $cars->where('year',$request->year);
+        }
+
+        if($request->filled('wilaya')){
+            $cars->whereHas('user',function ($q) use ($request){
+                $q->where('wilaya', $request->wilaya);
+            });
+        }
+    
+        $cars = $cars->get();
+        $brands = Brand::all();
+        $models = CarModel::all();
+        return view('searchcar', compact('cars', 'brands', 'models'));
     }
 
     public function about(){
@@ -36,5 +64,9 @@ class CarController extends Controller
         $semsarInfos = User::findOrFail($userId);
         $semsarCars = Car::where('user_id',$userId)->get();
         return view('semsarpage',compact('semsarInfos','semsarCars'));
+    }
+
+    public function addcar(){
+        return view('addcar');
     }
 }

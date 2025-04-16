@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
@@ -24,6 +28,20 @@ class UserController extends Controller
     Auth::login($user);
     
     return redirect()->route('edit.profile')->with('success','Welcom !');
+  }
+
+  public function auth(Request $request){
+    $credentials = $request->validate([
+      'email' => 'required|email',
+      'password' => 'required',
+    ]);
+
+    if(Auth::attempt($credentials)){
+      $request->session()->regenerate(); 
+      return redirect()->route('index')->with('success','Welcome!');
+    }
+
+    return redirect()->back()->with('error','User not found or wrong credentials');
   }
 
   public function editprofile(){
@@ -59,4 +77,10 @@ class UserController extends Controller
     return redirect()->route('index')->with('success','profile Updated successfully !');
   }
   
+  public function logout(Request $request) : RedirectResponse{
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/');
+}
 }
