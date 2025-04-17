@@ -621,3 +621,11 @@ ol,
 ul {
   padding-left: 0rem;
 }
+
+@media (min-width: 1000px) {
+  main .container .gridin {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
