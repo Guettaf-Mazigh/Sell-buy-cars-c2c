@@ -3,23 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="{{asset('css/normalize.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/login.css')}}" />
+    <title>SemsaR</title>
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
   </head>
   <body>
     <div class="hh"></div>
     <div data-aos-duration="500" data-aos="fade-up" class="wrapper">
       <div class="title-text">
-        <div class="title login">Login Form</div>
-        <div class="title signup">Signup Form</div>
+        <div class="title login">SemsaR</div>
+        <div class="title signup">SemsaR</div>
       </div>
       <div class="form-container">
         <div class="slide-controls">
@@ -30,7 +28,8 @@
           <div class="slider-tab"></div>
         </div>
         <div class="form-inner">
-          <form action="{{route('auth')}}" method="POST" class="login">
+          <!-- Login Form -->
+          <form action="{{ route('auth') }}" method="POST" class="login">
             @csrf
             <div class="field">
               <input type="email" name="email" placeholder="Email Address" required />
@@ -44,10 +43,12 @@
               <input type="submit" value="Login" />
             </div>
             <div class="signup-link">
-              Not a member? <a href="">Signup now</a>
+              Not a member? <a href="#">Signup now</a>
             </div>
           </form>
-          <form action="{{route('register')}}" method="POST" class="signup">
+
+          <!-- Signup Form -->
+          <form action="{{ route('register') }}" method="POST" class="signup">
             @csrf
             <div class="field">
               <input type="email" name="email" placeholder="Email Address" required />
@@ -66,10 +67,17 @@
         </div>
       </div>
     </div>
+
+    <div class="background">
+      @for($i = 0; $i < 20; $i++)
+        <span></span>
+      @endfor
+    </div>
+
+    <script src="{{ asset('js/login.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
-  <script src="{{asset('js/login.js')}}"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </html>

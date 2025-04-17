@@ -51,7 +51,7 @@
     <div class="carousel basic">
       <div class="group">
         @foreach ($brands as $brand)
-          <div class="card" style="
+          <div class="card card2" style="
           width: 25px; 
           height: 25px; 
           display: flex; 

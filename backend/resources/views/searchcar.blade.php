@@ -267,7 +267,7 @@
       </div>
     </div>
 
-    <div data-aos-duration="500" data-aos="fade-up" class="too">
+    <div data-aos-duration="500" data-aos="fade-up" class="too" style="display: grid">
       <div data-aos-duration="500" data-aos="fade-up" class="carcard">
         @foreach ($cars as $car)
           <div class="card-container">
@@ -294,7 +294,9 @@
             </div>
           </div>
         @endforeach
+      </div>
+      <div>
       <button class="shown" style="width: min-content">showmore</button>
+      </div>
     </div>
-  </div>
 @endsection
