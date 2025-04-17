@@ -29,10 +29,10 @@
           value="{{$infos->name}}"
         />
         <input
-          
+
           list="gender-list"
           id="gender-input"
-          
+
           name="gender"
           placeholder="gender"
           value="{{$infos->gender}}"
@@ -43,7 +43,7 @@
           <option value="female"></option>
         </datalist>
         <input
-          
+
           type="number"
           name="wilaya"
           id="wilaya"
@@ -53,7 +53,7 @@
           max="59"
         />
         <input
-          
+
           type="text"
           name="phone"
           id="phone"
@@ -72,16 +72,16 @@
       <div>
         <h3  style="color: aliceblue">Email & Password</h3>
         <input
-          
+
           type="email"
           name="email"
           id="email"
           placeholder="{{$infos->email}}"
           disabled
         />
-       
+
         <input
-               
+
                 type="password"
                 name="password"
                 id="password"
@@ -89,14 +89,14 @@
                 disabled
               />
               <input
-               
+
                 type="password"
                 name="password_confirmation"
                 id="passwordconf"
                 placeholder="confirm password"
                 disabled
               />
-          
+
         <span
           class="enablee"
           style="
@@ -110,7 +110,7 @@
         </span>
       </div>
       <input
-        
+
         type="submit"
         value="save"
       />
@@ -160,6 +160,11 @@
             <div>
               <button class="info-button">
                 <a href="editcarinfo.html" target="_blank"
+                  ><i class="fa-solid fa-trash" style="color: aliceblue"></i>
+                </a>
+              </button>
+              <button class="info-button">
+                <a href="editcarinfo.html" target="_blank"
                   ><i
                     class="fa-regular fa-pen-to-square"
                     style="color: aliceblue"
@@ -175,7 +180,7 @@
           </div>
         </div>
       @endforeach
-      
+
     </div>
     <button class="shown" style="width: min-content">showmore</button>
   </div>
