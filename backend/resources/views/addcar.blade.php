@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('title','Add A Car')
 @section('content')
-<div class="container" data-aos-duration="1500" data-aos="fade-up">
+<div class="container" data-aos-duration="1500" data-aos="fade-up" style="margin-top: 150px">
   <div class="caiin">
     <form action="" method="post">
       <h1 style="font-size: 45px">Add your car</h1>

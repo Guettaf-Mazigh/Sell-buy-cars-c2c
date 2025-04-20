@@ -3,24 +3,6 @@
 
 @section('content')
 
-<div class="container ooo">
-  <header>
-    <div class="content">
-      <h1 class="title"><a href="{{ url('/') }}">SemsaR</a></h1>
-    </div>
-    <div class="b">
-      <div>about</div>
-      <div>search</div>
-      <div>contact</div>
-      <div><a href="{{ url('login') }}">Login</a></div>
-    </div>
-    <div class="barss">
-      <i style="font-size: 25px" class="fa-solid fa-bars"></i>
-    </div>
-  </header>
-</div>
-
-<main>
   <div class="container">
     {{-- Showcase --}}
     <div class="hhh">
@@ -31,13 +13,13 @@
             <div id="carouselExampleFade" class="carousel slide carousel-fade">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="{{ asset('img/main-car.webp') }}" alt="main-car">
+                  <img src="{{ asset('img/main-car.webp') }}" alt="main-car" />
                 </div>
                 <div class="carousel-item">
-                  <img src="{{ asset('img/120.png') }}" alt="main-car">
+                  <img src="{{ asset('img/120.png') }}" alt="main-car" />
                 </div>
                 <div class="carousel-item">
-                  <img src="{{ asset('img/desktopBar3.webp') }}" alt="main-car">
+                  <img src="{{ asset('img/desktopBar3.webp') }}" alt="main-car" />
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -58,16 +40,16 @@
         <h1 style="color: aliceblue; font-size: 40px">Car features</h1>
         <div data-aos="fade-up" data-aos-duration="1500" class="carfeat">
           <ul class="ul">
-            <li><strong>Brand:</strong> <span>Renault</span></li>
-            <li><strong>Model:</strong> <span>Clio</span></li>
-            <li><strong>Motor:</strong> <span>1.2L</span></li>
-            <li><strong>Energy:</strong> <span>Essence</span></li>
-            <li><strong>Box:</strong> <span>Manuelle</span></li>
-            <li><strong>Kilometrage:</strong> <span>30 000 km</span></li>
-            <li><strong>Color:</strong> <span>Rouge</span></li>
-            <li><strong>Wilaya:</strong> <span>Bouira</span></li>
-            <li><strong>Price:</strong> <span>200 million</span></li>
-            <li><strong>Year:</strong> <span>2020</span></li>
+            <li><strong>brand:</strong> <span> </span></li>
+            <li><strong>Model:</strong> <span> {{$car->model->modelName}}</span></li>
+            <li><strong>Motor:</strong> <span> {{$car->motor}}</span></li>
+            <li><strong>Energie:</strong> <span> {{$car->energy}}</span></li>
+            <li><strong>Box:</strong> <span> {{$car->energy}}</span></li>
+            <li><strong>Kilometrage:</strong> <span> {{$car->Kilometrage}} km</span></li>
+            <li><strong>Color:</strong> <span> {{$car->color}}</span></li>
+            <li><strong>wilaya:</strong> <span> {{$car->user->wilaya}}</span></li>
+            <li><strong>Price:</strong> <span> {{$car->price}}</span> <span>million</span></li>
+            <li><strong>year:</strong> <span> {{$car->year}}</span></li>
             <li><strong>Paper:</strong> <span>À jour</span></li>
             <li><strong>Options:</strong> <span>Climatisation, GPS</span></li>
           </ul>
@@ -75,29 +57,26 @@
       </div>
     </div>
 
-    <div class="gridin">
-      {{-- Description --}}
-    <div data-aos="fade-up" data-aos-duration="1500" class="container" style="border-radius: 20px; margin-bottom: 30px; padding: 40px; color: aliceblue; background-color: rgba(0, 255, 255, 0.064);">
-      <h1 style="color: aliceblue; font-size: 40px">Description</h1>
-      <div style="color: aliceblue; font-size: 20px" class="disc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi reiciendis in quam voluptatibus? Excepturi praesentium fuga mollitia ipsum aliquid vitae cum voluptate, debitis blanditiis delectus, temporibus quasi amet ratione enim.
+    <div data-aos="fade-up" data-aos-duration="1500" class="gridin">
+      <div class="container" style="display: inline-block; border-radius: 20px; margin-bottom: 30px; padding: 40px; color: aliceblue; background-color: rgba(0, 255, 255, 0.064);">
+        <h1 style="color: aliceblue; font-size: 40px">description</h1>
+        <div style="color: aliceblue; font-size: 20px" class="disc">
+          {{$car->description}}
+        </div>
       </div>
-    </div>
-
-    {{-- Contact --}}
-    <div data-aos="fade-up" data-aos-duration="1500" class="container" style="border-radius: 20px; padding: 40px; color: aliceblue; background-color: rgba(0, 255, 255, 0.064);">
-      <h1 style="color: aliceblue; font-size: 40px">Contact</h1>
-      <div class="contact">
-        <p><i class="fa-solid fa-user"></i> SemsaRname
-          <span><a href="{{ url('semsarpage') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-        </p>
-        <p><i class="fa-solid fa-envelope"></i> email@example.com</p>
-        <p><i class="fa-solid fa-phone"></i> 06 00 00 00 00</p>
-        <p><i class="fa-solid fa-location-dot"></i> Adresse</p>
+      <div class="container" style="display: inline-block; border-radius: 20px; padding: 40px; color: aliceblue; background-color: rgba(0, 255, 255, 0.064);">
+        <h1 style="color: aliceblue; font-size: 40px">contact</h1>
+        <div class="contact">
+          <p>
+            <i class="fa-solid fa-user"></i> {{$car->user->name}} 
+            <span><a href="{{ route('semsar.page',$car->user->id) }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+          </p>
+          <p><i class="fa-solid fa-envelope"></i> {{$car->user->email}}</p>
+          <p><i class="fa-solid fa-phone"></i> {{$car->user->phoneNumber}}</p>
+          <p><i class="fa-solid fa-location-dot"></i> {{$car->user->address}}</p>
+        </div>
       </div>
     </div>
   </div>
-    </div>
-</main>
 
 @endsection
