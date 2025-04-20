@@ -274,6 +274,7 @@ a {
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
+  position: relative;
 }
 
 .card-container h3 {
@@ -628,4 +629,12 @@ ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+
+#sold {
+  position: absolute;
+  background-color: #0033cd;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
 }
