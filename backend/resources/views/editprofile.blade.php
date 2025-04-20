@@ -158,7 +158,7 @@
           >
             <p><i class="fa-solid fa-sack-dollar"></i> {{$car->price}} millions</p>
             <div>
-              <button class="info-button">
+              <button class="info-button .not">
                 <a href="editcarinfo.html" target="_blank"
                   ><i class="fa-solid fa-trash" style="color: aliceblue"></i>
                 </a>
