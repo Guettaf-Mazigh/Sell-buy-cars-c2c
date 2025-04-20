@@ -630,3 +630,11 @@ ul {
     gap: 20px;
   }
 }
+
+#sold {
+  position: absolute;
+  background-color: #0033cd;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
