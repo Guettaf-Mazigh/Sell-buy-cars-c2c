@@ -51,7 +51,11 @@ class User extends Authenticatable
         ];
     }
 
-    public function cars():HasMany{
+    public function cars() : HasMany{
         return $this->hasMany(Car::class);
+    }
+
+    public function requests() : HasMany{
+        return $this->hasMany(Request::class,'user_id');
     }
 }

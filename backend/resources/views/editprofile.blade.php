@@ -136,6 +136,14 @@
     <div class="carcard">
       @foreach ($cars as $car)
         <div class="card-container">
+          @if ($car->carRequest->state === 'pending')
+            <span  class="img__wrapper">
+            <span class="sold_out">pending</span>
+            </span>
+          @endif
+          @if ($car->carRequest->state === 'accepted')
+            <button id="sold">sold</button>
+          @endif
           <img
             src="{{asset('img/main-car.webp')}}"
             alt="Car Image"

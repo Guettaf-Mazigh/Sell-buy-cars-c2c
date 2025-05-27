@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BrandSeeder::class,
             CarModelSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            OptionSeeder::class,
+            AdminSeeder::class
         ]);
         User::factory(50)->create();
         Car::factory(60)->create();

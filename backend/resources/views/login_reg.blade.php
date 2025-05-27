@@ -29,7 +29,7 @@
         </div>
         <div class="form-inner">
           <!-- Login Form -->
-          <form action="{{ route('auth') }}" method="POST" class="login">
+          <form action="{{ route('authentification') }}" method="POST" class="login">
             @csrf
             <div class="field">
               <input type="email" name="email" placeholder="Email Address" required />

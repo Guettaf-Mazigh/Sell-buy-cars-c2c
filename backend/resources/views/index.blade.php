@@ -81,12 +81,16 @@
   <div data-aos-duration="500" data-aos="fade-up" class="too">
     <div data-aos-duration="500" data-aos="fade-up" class="carcard">
       @foreach ($cars as $car)
-        <div class="card-container">
-          <img
-            src="{{asset('img/main-car.webp')}}"
-            alt="Car Image"
-            style="width: 100%; border-radius: 0 0 5px 5px"
-          />
+        <div class="card-container">  
+          @if ($car->photo)
+            <img
+              src="{{asset('cars/'.$car->id.'/'.$car->photo.'.jpg')}}"
+              alt="Car Image"
+              style="width: 100%; border-radius: 0 0 5px 5px"
+            />  
+          @else
+            <img src="{{asset('img/main-car.webp')}}" alt="car">
+          @endif
           <h3>{{$car->model->modelName}}</h3>
           <p><i class="fa-solid fa-location-dot"></i> {{$car->user->wilaya}}</p>
           <div class="khnatech">

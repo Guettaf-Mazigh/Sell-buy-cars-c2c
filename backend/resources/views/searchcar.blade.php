@@ -15,11 +15,11 @@
           display: flex; 
           justify-content: center; 
           align-items: center; 
-      "><img src="{{asset($brand->logo)}}" alt="{{$brand->brandName}}" style="
-        width: 100%; 
-        height: 100%; 
+      "><a href="{{route('filter.by.brand',$brand->id)}}"><img src="{{asset($brand->logo)}}" alt="{{$brand->brandName}}" style="
+        width: 90%; 
+        height: 90%; 
         object-fit: contain;
-    "></div>
+    "></a></div>
         @endforeach
         </div>
       </div>

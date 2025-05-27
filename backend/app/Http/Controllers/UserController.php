@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
@@ -36,9 +34,14 @@ class UserController extends Controller
       'password' => 'required',
     ]);
 
-    if(Auth::attempt($credentials)){
-      $request->session()->regenerate(); 
-      return redirect()->route('index')->with('success','Welcome!');
+    if(Auth::guard('admin')->attempt($credentials)){
+      $request->session()->regenerate();
+      return redirect()->intended('/admin/dashboard');
+    }
+
+    if (Auth::guard('web')->attempt($credentials)) {
+        $request->session()->regenerate();
+        return redirect()->intended('/index');
     }
 
     return redirect()->back()->with('error','User not found or wrong credentials');

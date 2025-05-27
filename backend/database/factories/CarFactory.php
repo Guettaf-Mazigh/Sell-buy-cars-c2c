@@ -30,4 +30,12 @@ class CarFactory extends Factory
             'description' => fake()->text()
         ];
     }
+
+    public function configure() : static{
+        return $this->afterCreating(function ($car){
+            $car->carRequest()->create([
+                'state' => 'accepted',
+            ]);
+        });
+    }
 }

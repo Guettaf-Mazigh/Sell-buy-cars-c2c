@@ -3,7 +3,8 @@
 @section('content')
 <div class="container" data-aos-duration="1500" data-aos="fade-up" style="margin-top: 150px">
   <div class="caiin">
-    <form action="" method="post">
+    <form action="{{route('store.car')}}" method="POST" enctype="multipart/form-data">
+      @csrf
       <h1 style="font-size: 45px">Add your car</h1>
       <h3><i class="fa-solid fa-car"></i> About car</h3>
       <input
@@ -12,7 +13,7 @@
         id="year"
         placeholder="year"
         max="2025"
-        min="1999"
+        min="1900"
         required
       />
       <select
@@ -88,80 +89,45 @@
           padding: 10px; /* Add padding to options */
         }
       </style>
-      <select
-        style="background-color: #4a359700; color: rgb(92, 97, 101)"
-        id="brand-input"
-        name="brand"
-      >
+      <select id="brand-input" name="brand" style="background-color: #4a359700; color: rgb(92, 97, 101)" required>
         <option value="" disabled selected>Select a car brand</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="bmw">BMW</option>
-        <option value="audi">Audi</option>
-        <option value="astonmartin">Aston Martin</option>
-        <option value="peugeot">Peugeot</option>
-        <option value="volkswagen">Volkswagen</option>
-        <option value="toyota">Toyota</option>
-        <option value="ford">Ford</option>
-        <option value="honda">Honda</option>
-        <option value="nissan">Nissan</option>
-        <option value="tesla">Tesla</option>
-        <option value="chevrolet">Chevrolet</option>
-        <option value="hyundai">Hyundai</option>
-        <option value="kia">Kia</option>
-        <option value="porsche">Porsche</option>
-        <option value="ferrari">Ferrari</option>
-        <option value="lamborghini">Lamborghini</option>
-        <option value="jaguar">Jaguar</option>
-        <option value="landrover">Land Rover</option>
-        <option value="mazda">Mazda</option>
-        <option value="subaru">Subaru</option>
-      </select>
-
-      <select
-        type="text"
-        id="model"
-        name="model"
-        style="background-color: #4a359700; color: rgb(92, 97, 101)"
-        required
-      >
+        @foreach ($brands as $brand)  
+            <option value="{{$brand->id}}">{{$brand->brandName}}</option>
+        @endforeach
+    </select>
+    
+    <select id="model" name="model" style="background-color: #4a359700; color: rgb(92, 97, 101)" required disabled>
         <option value="" disabled selected>Select a car model</option>
-        <option value="mercedes">gle</option>
-        <option value="bmw">207</option>
-        <option value="audi">Audi</option>
-        <option value="astonmartin">Aston Martin</option>
-        <option value="peugeot">Peugeot</option>
-        <option value="volkswagen">Volkswagen</option>
-        <option value="toyota">Toyota</option>
-        <option value="ford">Ford</option>
-      </select>
+    </select>
 
       <h3><i class="fa-solid fa-gear"></i> Motorisation</h3>
       <input type="text" id="motor" name="motor" placeholder="motor" />
+      
+      <select
+      style="background-color: #4a359700; color: rgb(92, 97, 101)"
+      name="energy"
+      placeholder="Energy"
+    >
+      <option value="" disabled selected>Select car energy</option>
+      <option value="gasoline">gasoline</option>
+      <option value="diesel">diesel</option>
+      <option value="GPL">GPL</option>
+      <option value="electricity">electricity</option>
+      <option value="hybrid">hybrid</option>
+    </select>
 
-      <input
-        list="energie-list"
-        id="energie-input"
-        name="energie"
-        placeholder="energie"
-        required
-      />
-      <datalist id="energie-list">
-        <option value="gasoline"></option>
-        <option value="diesel"></option>
-        <option value="electric"></option>
-      </datalist>
+      <select
+      style="background-color: #4a359700; color: rgb(92, 97, 101)"
+      name="box"
+      placeholder="box"
+    >
+      <option value="" disabled selected>Select car box</option>
+      <option value="automatic">Automatic</option>
+      <option value="manual">manual</option>
+      <option value="semi_automatic">Semi Auto</option>
+    </select>
 
-      <input
-        list="box-list"
-        id="box-input"
-        name="box"
-        placeholder="box"
-        required
-      />
-      <datalist id="box-list">
-        <option value="automatic"></option>
-        <option value="manual"></option>
-      </datalist>
+      
 
       <h3><i class="fa-solid fa-thumbtack"></i> Specifiction</h3>
       <input
@@ -178,71 +144,24 @@
         placeholder="color"
         required
       />
-      <input
-        list="paper-list"
-        id="paper-input"
-        name="paper"
-        placeholder="paper"
-        required
-      />
-      <datalist id="paper-list">
-        <option value="gray card"></option>
-        <option value="yellow card"></option>
-        <option value="licence"></option>
-      </datalist>
-
-      <input
-        type="text"
-        id="Cylinders"
-        name="Cylinders"
-        placeholder="Cylinders"
-        required
-      />
-      <input
-        type="number"
-        id="seats"
-        name="seats"
-        placeholder="seats"
-        required
-      />
-      <input
-        type="number"
-        id="doors"
-        name="doors"
-        placeholder="doors"
-        required
-      />
-
-      <h3><i class="fa-solid fa-filter"></i> Options</h3>
-      <!-- Essential Features -->
       <div class="options">
-        <label><input type="checkbox" /> Air Conditioning</label>
-        <label><input type="checkbox" /> Power Windows</label>
-        <label><input type="checkbox" /> Power Door Locks</label>
-        <label><input type="checkbox" /> Keyless Entry</label>
-        <label><input type="checkbox" /> Bluetooth Connectivity</label>
-        <label><input type="checkbox" /> USB Ports</label>
-        <label><input type="checkbox" /> Rearview Camera</label>
-        <label
-          ><input type="checkbox" /> Tire Pressure Monitoring System
-          (TPMS)</label
-        >
-        <label
-          ><input type="checkbox" /> Anti-Lock Braking System (ABS)</label
-        >
-        <label
-          ><input type="checkbox" /> Airbags (Front, Side, Curtain)</label
-        >
-        <label
-          ><input type="checkbox" /> Electronic Stability Control
-          (ESC)</label
-        >
-        <label><input type="checkbox" /> Automatic Headlights</label>
-        <label><input type="checkbox" /> Cruise Control</label>
-        <label
-          ><input type="checkbox" /> Spare Tire or Tire Repair Kit</label
-        >
+        <label><input type="checkbox" name="options[]" value="Air Conditioning" /> Air Conditioning</label>
+        <label><input type="checkbox" name="options[]" value="Power Windows" /> Power Windows</label>
+        <label><input type="checkbox" name="options[]" value="Power Door Locks" /> Power Door Locks</label>
+        <label><input type="checkbox" name="options[]" value="Keyless Entry" /> Keyless Entry</label>
+        <label><input type="checkbox" name="options[]" value="Bluetooth Connectivity" /> Bluetooth Connectivity</label>
+        <label><input type="checkbox" name="options[]" value="USB Ports" /> USB Ports</label>
+        <label><input type="checkbox" name="options[]" value="Rearview Camera" /> Rearview Camera</label>
+        <label><input type="checkbox" name="options[]" value="TPMS" /> Tire Pressure Monitoring System (TPMS)</label>
+        <label><input type="checkbox" name="options[]" value="ABS" /> Anti-Lock Braking System (ABS)</label>
+        <label><input type="checkbox" name="options[]" value="Airbags" /> Airbags (Front, Side, Curtain)</label>
+        <label><input type="checkbox" name="options[]" value="ESC" /> Electronic Stability Control (ESC)</label>
+        <label><input type="checkbox" name="options[]" value="Automatic Headlights" /> Automatic Headlights</label>
+        <label><input type="checkbox" name="options[]" value="Cruise Control" /> Cruise Control</label>
+        <label><input type="checkbox" name="options[]" value="Spare Tire" /> Spare Tire or Tire Repair Kit</label>
       </div>
+
+      
       <br /><br />
       <div class="jjjjjjj">
         <div>
@@ -263,7 +182,7 @@
             rows="10"
             placeholder="description"
           >
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit sed obcaecati autem praesentium earum. Est quae atque at eveniet voluptatibus accusantium nulla, repellendus quidem iusto aperiam dolore, placeat fuga laudantium!</textarea
+          </textarea
           >
         </div>
         <div>
@@ -281,8 +200,8 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit sed obcaecati aute
           <br />
           <input
             type="file"
-            name="photo"
-            id="photo"
+            name="photos[]"
+            id="photos"
             accept="image/*"
             multiple
           />
@@ -303,3 +222,34 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit sed obcaecati aute
     </form>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const brandSelect = document.getElementById('brand-input');
+      const modelSelect = document.getElementById('model');
+  
+      brandSelect.addEventListener('change', function () {
+          const brandId = this.value;
+          modelSelect.innerHTML = '<option disabled selected>Loading...</option>';
+          modelSelect.disabled = true;
+  
+          fetch(`/get-models/${brandId}`)
+              .then(response => {
+                  if (!response.ok) throw new Error('Network response was not ok');
+                  return response.json();
+              })
+              .then(data => {
+                  modelSelect.innerHTML = '<option value="" disabled selected>Select a car model</option>';
+                  data.forEach(model => {
+                      const option = new Option(model.modelName, model.id);
+                      modelSelect.add(option);
+                  });
+                  modelSelect.disabled = false;
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  modelSelect.innerHTML = '<option disabled selected>Error loading models</option>';
+              });
+      });
+  });
+  </script>

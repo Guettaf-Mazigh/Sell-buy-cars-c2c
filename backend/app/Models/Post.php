@@ -9,7 +9,7 @@ class Post extends Model
 {
   protected $fillable = ['admin_id','title','content'];
 
-  public function admin():BelongsTo{
+  public function admin() : BelongsTo{
     return $this->belongsTo(Admin::class,'admin_id');
   }
 }

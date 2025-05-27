@@ -274,6 +274,7 @@ a {
   padding: 10px;
   border-radius: 10px;
   margin: 10px;
+  position: relative;
 }
 
 .card-container h3 {
@@ -352,9 +353,9 @@ input[type="file"] {
   border: 2px dashed #bbbbbb00;
   background-color: #ffffff00;
   transition: border-color 0.25s ease-in-out;
-  width: 200px;
+  width: 185px;
   &::file-selector-button {
-    padding: 1em ;
+    padding: 1em 1.5em;
     border-width: 0;
     border-radius: 2em;
     background-color: hsl(210 70% 30%);
@@ -628,4 +629,12 @@ ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+}
+
+#sold {
+  position: absolute;
+  background-color: #0033cd;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
 }
