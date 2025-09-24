@@ -8,9 +8,9 @@ This project was developed as part of our Bachelor's degree final year in Comput
 ## 📸 Screenshots
 
 ![Homepage](docs/screenshot-home.png)  
-![Car Details](docs/screenshot-car-info.png)  
+![Car Details](docs/car-info-page.png)  
 ![Admin Dashboard](docs/screenshot-admin.png)  
-![Search Page](docs/screenshot-search-page.png)
+![Search Page](docs/search-page.png)
 ![Login Page](docs/screenshot-login-page.png)
 
 ---
