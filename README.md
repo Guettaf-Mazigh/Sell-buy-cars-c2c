@@ -5,7 +5,7 @@ This project was developed as part of our Bachelor's degree final year in Comput
 
 ---
 
-## 📸 Some Screenshots
+## 📸 Screenshots
 
 ![Homepage](docs/screenshot-home.png)  
 ![Car Details](docs/screenshot-car-info.png)  
@@ -66,5 +66,6 @@ This project was developed as part of our Bachelor's degree final year in Comput
 
 
    **Team**
-   Amazigh GUETTAF – Backend Developer (Laravel, Database, Authentication, APIs)
+   <br>
+   Amazigh GUETTAF – Backend Developer (Laravel, Database, Authentication, APIs) <br>
    Djamel Eddin FAID [ak2djamo] – Frontend Developer (UI/UX, Design, Integration)
