@@ -67,5 +67,5 @@ This project was developed as part of our Bachelor's degree final year in Comput
 
    **Team**
    <br>
-   Amazigh GUETTAF – Backend Developer (Laravel, Database, Authentication, APIs) <br>
+   Amazigh GUETTAF – Backend Developer (Laravel, Database, Authentication) <br>
    Djamel Eddin FAID [ak2djamo] – Frontend Developer (UI/UX, Design, Integration)
