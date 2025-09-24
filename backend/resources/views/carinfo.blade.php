@@ -14,11 +14,13 @@
             <div class="carousel-inner">
               @for ($i = 1; $i <= 3; $i++)
                 <div class="carousel-item {{ $i == 1 ? 'active' : '' }}">
-                  @if ($i === 1)
-                    <img src="{{asset('cars/' . "$car->id/" . "$car->photo" . ".png")}}" alt="main-car" />
-                  @else
-                    <img src="{{asset('cars/' . "$car->id/" . "$car->photo" . ".$i" . ".png")}}" alt="main-car" />
-                  @endif
+                  @php
+                    $fileName = $i === 1
+                      ? asset('cars/' . $car->id . '/' . $car->photo . '.jpg')
+                      : asset('cars/' . $car->id . '/' . $car->photo . '.' . $i . '.jpg');
+                  @endphp
+
+                  <img src="{{ $fileName }}" alt="car image {{ $i }}" />
                 </div>
               @endfor
             </div>
@@ -67,7 +69,7 @@
           <li><strong>Energie:</strong> <span>{{$car->energy}}</span></li>
           <li><strong>Box:</strong> <span>{{$car->box}}</span></li>
           <li><strong>Kilometrage:</strong> <span>{{$car->Kilometrage}} km</span></li>
-          <li><strong>Color:</strong> <span>{{$car->color}}</span></li>
+          <li><strong>Color:</strong> <span>{{$car->Color}}</span></li>
           <li><strong>wilaya:</strong> <span>{{$car->user->wilaya}}</span></li>
           <li>
             <strong>Price:</strong> <span>{{$car->price}} </span> <span>million</span>

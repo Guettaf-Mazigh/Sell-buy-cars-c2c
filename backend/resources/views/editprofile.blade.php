@@ -145,7 +145,7 @@
             <button id="sold">sold</button>
           @endif
           <img
-            src="{{asset('img/main-car.webp')}}"
+            src="{{asset('cars/'.$car->id.'/'.$car->photo.'.jpg')}}"
             alt="Car Image"
             style="width: 100%; border-radius: 0 0 5px 5px"
           />
@@ -166,13 +166,8 @@
           >
             <p><i class="fa-solid fa-sack-dollar"></i> {{$car->price}} millions</p>
             <div>
-              <button class="info-button .not">
-                <a href="editcarinfo.html" target="_blank"
-                  ><i class="fa-solid fa-trash" style="color: aliceblue"></i>
-                </a>
-              </button>
               <button class="info-button">
-                <a href="editcarinfo.html" target="_blank"
+                <a href="{{route('edit.car.info',$car->id)}}" target="_blank"
                   ><i
                     class="fa-regular fa-pen-to-square"
                     style="color: aliceblue"

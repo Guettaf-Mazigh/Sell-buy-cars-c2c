@@ -52,6 +52,7 @@
               Edit Article
             </h2>
             <form id="myForm" action="" method="post">
+              @csrf
               <input
                 type="text"
                 name="articletiltle"
@@ -83,5 +84,13 @@
   <script src="{{asset('js/script.js')}}"></script>
   <script src="{{asset('js/index.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <script>
+      // Handle the form submission and redirect to the other page
+      document.getElementById('submitButton').addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent default form submission
+        var content = tinymce.get('default').getContent();  // Get content from TinyMCE
+        var encodedContent = encodeURIComponent(content);  // URL encode the content
+        window.open('articleviewuser.blade.php?content=' + encodedContent, '_blank');  // Open in a new tab
+      });
+    </script>
 </html>

@@ -34,6 +34,8 @@ Route::middleware(['auth'])->group(function(){
     Route::controller(CarController::class)->group(function(){
         Route::get('/addcar','addcar')->name('add.car');
         Route::post('/store/car','storecar')->name('store.car');
+        Route::get('/edit/car/{carId}','editcarinfo')->name('edit.car.info');
+        Route::post('/car/update',[CarController::class,'update'])->name('update.car');
     });
     
     Route::controller(UserController::class)->group(function(){
@@ -53,6 +55,7 @@ Route::prefix('admin')->middleware(['auth:admin','admin'])->group(function(){
     Route::post('/admin/store/modal',[AdminController::class,'storeModal'])->name('store.modal');
     Route::post('/admin/store/brand/model',[AdminController::class,'storeBrandModel'])->name('store.brand.model');
     Route::get('/admin/view/article',[AdminController::class,'viewArticle'])->name('view.article');
+    Route::get('/admin/view/car/{id}', [AdminController::class, 'carinfo'])->name('car.info.admin');
 });
 
 Route::controller(UserController::class)->group(function(){

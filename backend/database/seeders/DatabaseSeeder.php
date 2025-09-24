@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Car;
+use App\Models\Post;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             CarModelSeeder::class,
             UserSeeder::class,
             OptionSeeder::class,
-            AdminSeeder::class
+            AdminSeeder::class,
+            PostSeeder::class
         ]);
         User::factory(50)->create();
         Car::factory(60)->create();

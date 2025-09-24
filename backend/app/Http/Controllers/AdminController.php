@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Car;
 use App\Models\CarModel;
 use App\Models\CarRequest;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -20,9 +21,9 @@ class AdminController extends Controller
         $rejectedCars = CarRequest::where('state','rejected')->get();
         $acceptedCars = CarRequest::where('state','accepted')->get();
         $brands = Brand::all();
-
+        $posts = Post::count();
         return view('admin.dashboard',compact(
-            'users', 'carCount', 'semsarCount', 'cars', 'pendingCars','rejectedCars','acceptedCars','brands'
+            'users', 'carCount', 'semsarCount', 'cars', 'pendingCars','rejectedCars','acceptedCars','brands','posts'
         ));
     }
 
@@ -34,6 +35,13 @@ class AdminController extends Controller
     public function acceptRequest($id){
         $request = CarRequest::findOrFail($id);
         $request->state = 'accepted';
+        $request->save();
+        return redirect()->back();
+    }
+
+    public function rejectRequest($id){
+        $request = CarRequest::findOrFail($id);
+        $request->state = 'rejected';
         $request->save();
         return redirect()->back();
     }
@@ -102,4 +110,9 @@ class AdminController extends Controller
     public function viewArticle(){
         return view('admin.articleviewuser');
     } 
+
+   public function carinfo($id) {
+        $car = Car::findOrFail($id);
+        return view('admin.carinfoadmin',compact('car'));
+    }
 }

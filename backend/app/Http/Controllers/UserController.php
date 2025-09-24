@@ -41,7 +41,7 @@ class UserController extends Controller
 
     if (Auth::guard('web')->attempt($credentials)) {
         $request->session()->regenerate();
-        return redirect()->intended('/index');
+        return redirect()->intended('/');
     }
 
     return redirect()->back()->with('error','User not found or wrong credentials');

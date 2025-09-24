@@ -16,16 +16,16 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{asset('css/normalize.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap"
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="{{asset('css/all.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/index.css')}}" />
   </head>
   <style></style>
   <body>
@@ -55,15 +55,15 @@
                   class="carousel slide carousel-fade"
                 >
                   <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/main-car.webp" alt="main-car" />
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/120.png" alt="main-car" />
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/desktopBar3.webp" alt="main-car" />
-                    </div>
+                    @for ($i = 1; $i <= 3; $i++)
+                      <div class="carousel-item {{ $i == 1 ? 'active' : '' }}">
+                        @if ($i === 1)
+                          <img src="{{asset('cars/' . "$car->id/" . "$car->photo" . ".jpg")}}" alt="main-car" />
+                        @else
+                          <img src="{{asset('cars/' . "$car->id/" . "$car->photo" . ".$i" . ".jpg")}}" alt="main-car" />
+                        @endif
+                      </div>
+                    @endfor
                   </div>
                   <button
                     class="carousel-control-prev"
@@ -103,18 +103,18 @@
             <h1 style="color: aliceblue; font-size: 40px">Car features</h1>
             <div class="carfeat">
               <ul class="ul">
-                <li><strong>brand:</strong> <span>Renault</span></li>
-                <li><strong>Model:</strong> <span>Clio</span></li>
-                <li><strong>Motor:</strong> <span>1.2L</span></li>
-                <li><strong>Energie:</strong> <span>Essence</span></li>
-                <li><strong>Box:</strong> <span>Manuelle</span></li>
-                <li><strong>Kilometrage:</strong> <span>30 000 km</span></li>
-                <li><strong>Color:</strong> <span>Rouge</span></li>
-                <li><strong>wilaya:</strong> <span>bouira</span></li>
+                <li><strong>brand:</strong> <span>{{$car->model->brand->brandName}}</span></li>
+                <li><strong>Model:</strong> <span>{{$car->model->modelName}}</span></li>
+                <li><strong>Motor:</strong> <span>{{$car->motor}}</span></li>
+                <li><strong>Energie:</strong> <span>{{$car->energy}}</span></li>
+                <li><strong>Box:</strong> <span>{{$car->box}}</span></li>
+                <li><strong>Kilometrage:</strong> <span>{{$car->kilometrage}}</span></li>
+                <li><strong>Color:</strong> <span>{{$car->Color}}</span></li>
+                <li><strong>wilaya:</strong> <span>{{$car->user->wilaya}}</span></li>
                 <li>
-                  <strong>Price:</strong> <span>200 </span> <span>million</span>
+                  <strong>Price:</strong> <span>{{$car->price}} </span> <span>million</span>
                 </li>
-                <li><strong>year:</strong> <span>2020</span></li>
+                <li><strong>year:</strong> <span>{{$car->year}}</span></li>
                 <li><strong>Paper:</strong> <span>À jour</span></li>
                 <li>
                   <strong>Options:</strong> <span>Climatisation, GPS</span>
@@ -134,11 +134,7 @@
         >
           <h1 style="color: aliceblue; font-size: 40px">description</h1>
           <div style="color: aliceblue; font-size: 20px" class="disc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi
-            reiciendis in quam voluptatibus? Excepturi praesentium fuga mollitia
-            ipsum aliquid vitae cum voluptate, debitis blanditiis delectus,
-            temporibus quasi amet ratione enim. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Reprehenderit similique, voluptates
+            {{$car->description}}
           </div>
         </div>
       </div>
@@ -149,14 +145,14 @@
   <script>
     AOS.init();
   </script>
-  <script src="js/index.js"></script>
+  <script src="{{asset('js/index.js')}}"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/admin.js"></script>
+  <script src="{{asset('js/admin.js')}}"></script>
   <script>
     document.querySelectorAll(".testbtn").forEach((button) => {
       button.addEventListener("click", async () => {

@@ -133,4 +133,71 @@ class CarController extends Controller
         $car->update(['photo' => $baseFileName]);
         return redirect()->route('index')->with('success', 'Your car was added successfully!');
     }
+
+    public function editcarinfo($carId){
+        $brands = Brand::all();
+        $car = Car::findOrFail($carId);
+        return view('editcarinfo',compact('brands','car'));
+    }
+
+
+public function update(Request $request){
+    $request->validate([
+        'id' => 'required|exists:cars,id',
+        'year' => 'required|integer|min:1900|max:2025',
+        'motor' => 'nullable|string',
+        'energy' => 'nullable|string',
+        'box' => 'nullable|string',
+        'mileage' => 'required|integer',
+        'color' => 'required|string',
+        'description' => 'nullable|string',
+        'price' => 'nullable|numeric',
+        'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    $car = Car::findOrFail($request->input('id'));
+
+    CarRequest::create([
+        'car_id' => $car->id,
+        'state' => 'pending'
+    ]);
+
+    if ($request->hasFile('photos')) {
+        $folderPath = 'cars/' . $car->id;
+        $fullPath = public_path($folderPath);
+
+        if (!File::exists($fullPath)) {
+            File::makeDirectory($fullPath, 0777, true);
+        }
+
+        $baseFileName = Str::random(20);
+        $i = 1;
+        foreach ($request->file('photos') as $photo) {
+            if ($photo->isValid()) {
+                if ($i > 3) break;
+                $fileName = ($i === 1)
+                    ? $baseFileName . '.' . $photo->extension()
+                    : $baseFileName . '.' . $i . '.' . $photo->extension();
+                $photo->move($fullPath, $fileName);
+                $i++;
+            }
+        }
+
+        $car->photo = $baseFileName;
+    }
+
+        $car->year = $request->year;
+        $car->motor = $request->motor;
+        $car->energy = $request->energy;
+        $car->box = $request->box;
+        $car->kilometrage = $request->mileage;
+        $car->color = $request->color;
+        $car->description = $request->description;
+        $car->price = $request->price;
+        $car->save();
+
+        return redirect('/');
+    }
+    
+
 }

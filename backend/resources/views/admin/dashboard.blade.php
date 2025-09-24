@@ -121,7 +121,7 @@
             <div class="box box2">
               <i class="fa-solid fa-note-sticky"></i>
               <span class="text">Total articles</span>
-              <span class="number">20,120</span>
+              <span class="number">{{$posts}}</span>
             </div>
             <div class="box box3">
               <i class="fa-solid fa-user"></i>
@@ -146,53 +146,49 @@
               </tr>
             </thead>
             <tbody>
+              
               @foreach ($pendingCars as $car)
-                <tr>
-                  <td>{{$car->car->id}}</td>
-                  <td>{{$car->car->user->name}}</td>
+  <tr>
+    <td>{{ $car->car->id }}</td>
+    <td>{{ $car->car->user->name }}</td>
 
-                  <td>
-                    <button
-                      class="modal-open button"
-                      data-modal="modal1"
-                      aria-haspopup="true"
-                    >
-                      <i class="fa-regular fa-eye"></i>
-                    </button>
-                  </td>
-                  <td>
-                    <form action="{{route('admin.requests.accept',$car->id)}}" method="POST" style="display:inline;">
-                      @csrf
-                      <button type="submit" class="acs done">✔️</button>
-                    </form>
-                    <button class="reff not not">❌</button>
-                  </td>
-                </tr>
-              @endforeach
+    <td>
+      <button class="modal-open button" data-modal="modal-{{ $car->car->id }}" aria-haspopup="true">
+        <i class="fa-regular fa-eye"></i>
+      </button>
+    </td>
+
+    <td>
+      <form action="{{ route('admin.requests.accept', $car->id) }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" class="acs done">✔️</button>
+      </form>
+      <form action="{{ route('delete.poste', $car->id) }}" method="post">
+        @csrf
+        <button class="reff not not">❌</button>
+      </form>
+    </td>
+  </tr>
+
+  <!-- Modal unique pour chaque voiture -->
+  <div class="modal-overlay" id="modal-{{ $car->car->id }}-overlay">
+    <div class="modal" id="modal-{{ $car->car->id }}" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2>Infos voiture #{{ $car->car->id }}</h2>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-content">
+        <iframe
+          src="{{ route('car.info.admin', $car->car->id) }}"
+          style="height: 100%; width: 100%">
+        </iframe>
+      </div>
+    </div>
+  </div>
+@endforeach
+
             </tbody>
 
-            <div class="modal-overlay" id="modal1-overlay">
-              <div
-                class="modal"
-                id="modal1"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="modal1-title"
-              >
-                <div class="modal-header">
-                  <h2 id="modal1-title">Accessible Modal Title</h2>
-                  <button class="modal-close" aria-label="Close modal">
-                    &times;
-                  </button>
-                </div>
-                <div class="modal-content">
-                  <iframe
-                    src="carinfoadmin.html"
-                    style="height: 100%; width: 100%"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
           </table>
         </div>
       </div>
@@ -284,8 +280,7 @@
                   </form>
                 </tr>
                 @endforeach
-
-        <!-- Modal (une seule fois, en dehors de la boucle) -->
+                
         <div class="modal-overlay" id="modal-overlay" style="display: none;">
           <div style="width: 95%;" class="modal" id="modal" role="dialog" aria-modal="true">
             <div class="modal-header">
@@ -310,7 +305,7 @@
         <div class="activity">
           <div class="title">
             <i class="uil uil-check"></i>
-            <span class="text">approved postes</span>
+            <span class="text">approved posts</span>
           </div>
           <table class="activity-data">
             <thead>
@@ -329,7 +324,7 @@
                 <td>{{$car->car->user->name}}</td>
 
                 <td>
-                  <button onclick="openModal({{ $car->car->id }})" class="button">
+                  <button onclick="openModal({{ $car->car->id}})" class="button">
                       <i class="fa-regular fa-eye"></i>
                     </button>
                 </td>
@@ -339,19 +334,7 @@
                 </form>
               </tr>
             @endforeach
-               <div class="modal-overlay" id="modal-overlay" style="display: none;">
-          <div style="width: 95%;" class="modal" id="modal" role="dialog" aria-modal="true">
-            <div class="modal-header">
-              <h2>Informations voiture</h2>
-              <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
-                &times;
-              </button>
-            </div>
-            <div class="modal-content">
-              <iframe id="car-iframe" style="height: 100%; width: 100%;" frameborder="0"></iframe>
-            </div>
-          </div>
-        </div>
+               
             </tbody>
           </table>
         </div>

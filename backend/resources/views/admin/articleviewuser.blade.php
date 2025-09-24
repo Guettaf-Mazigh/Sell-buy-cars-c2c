@@ -64,7 +64,25 @@
             background-color: rgba(83, 118, 106, 0.256);
             border-radius: 10px;
           "
-        ></div>
+        >
+      
+      
+        <div id="contentDisplay"></div>
+
+    <script>
+      // Retrieve the content from the URL query parameters
+      var urlParams = new URLSearchParams(window.location.search);
+      var content = urlParams.get('content');  // Get 'content' parameter
+
+      // Check if content is found, then display it
+      if (content) {
+        document.getElementById('contentDisplay').innerHTML = decodeURIComponent(content);  // Decode and display the content
+      } else {
+        document.getElementById('contentDisplay').innerHTML = "No content found!";
+      }
+    </script>
+      
+      </div>
       </div>
 
       <div class="container">
